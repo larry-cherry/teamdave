@@ -53,9 +53,8 @@ $('#images').on('click', 'img', function() {
 	addLayer(this.src, x, 0);
 });
 
-// Discuss the necessity of this event before removing.
 // $comicCanvas.on('click', function(e) {
-// 	deSelectLayers();
+// 	return !hasBackground && deSelectLayers();
 // });
 
 $('#delete-button').on('click', function(e) {
@@ -79,7 +78,7 @@ function addLayer(src, x, y) {
 		hasBackground = true;
 	} else {
 		isBackground = false;
-		index = 1 + $comicCanvas.getLayers().length;
+		index = $comicCanvas.getLayers().length;
 	};
 
 	$comicCanvas.addLayer({
